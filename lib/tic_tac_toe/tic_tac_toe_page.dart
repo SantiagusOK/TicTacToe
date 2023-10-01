@@ -1,5 +1,4 @@
 import 'package:ejemplos_2do_soft_9010/tic_tac_toe/tic_tac_toe.dart';
-import 'package:ejemplos_2do_soft_9010/tic_tac_toe/tic_tac_toe_domain.dart';
 import 'package:ejemplos_2do_soft_9010/tic_tac_toe/tic_tac_toe_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';

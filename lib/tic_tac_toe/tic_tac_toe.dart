@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:ffi';
 import 'dart:math';
-import 'tic_tac_toe_domain.dart';
 import 'package:bloc/bloc.dart';
 import 'package:ejemplos_2do_soft_9010/tic_tac_toe/tic_tac_toe_state.dart';
 import 'package:flutter/material.dart';
