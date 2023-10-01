@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:ffi';
 import 'dart:math';
-
+import 'tic_tac_toe_domain.dart';
 import 'package:bloc/bloc.dart';
 import 'package:ejemplos_2do_soft_9010/tic_tac_toe/tic_tac_toe_state.dart';
 import 'package:flutter/material.dart';
@@ -14,9 +14,21 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
   late String currentPlayer;
   late List<String> board;
   int? movingFrom;
-  int saveMovingFrom = 0;
   bool selected = false;
+  int saveMovingFrom = 0;
+  String saveCurrentPlayer = '';
+  bool changeOponent = true;
+
   MaterialColor color = Colors.red;
+  final List<MaterialColor> boardTiles = [
+    Colors.purple,
+    Colors.orange,
+    Colors.yellow,
+    Colors.red,
+    Colors.blue,
+    Colors.green,
+    Colors.brown,
+  ];
   TicTacToeGame()
       : super(const TicTacToeFirstState(
             board: ['', '', '', '', '', '', '', '', ''], currentPlayer: 'X')) {
@@ -65,15 +77,18 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
   selectCell(int pos) {
     bool boardChanged = false;
     if (_allTheChipsHaveBeenPlaced()) {
+      changeOponent = false;
       //Si ya han sido colocadas las 6 fichas...
+      selected = true;
+      emit(TicTacToeFirstState(board: board, currentPlayer: currentPlayer));
       if (board[pos] == currentPlayer) {
         // Si el jugador ha seleccionado una celda donde hay una ficha suya
         // (la ficha a mover), se guarda en movingFrom la posición de esta celda
-        print('antes del moving: $movingFrom');
         movingFrom = pos;
         saveMovingFrom = pos;
-        selected = true;
-        print('despues del moving: $movingFrom');
+        board[pos] = currentPlayer == 'X' ? '[X]' : '[O]';
+        saveCurrentPlayer = currentPlayer;
+        currentPlayer = 'continua $saveCurrentPlayer';
       } else if (board[pos] == _opponentPlayer()) {
         //Si la celda esta ocupada con una ficha del oponente, generamos un estado de error
         emit(const TicTacToeFailureState(
@@ -89,6 +104,7 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
         } else {
           //... y ya se había seleccionado la ficha a mover...
           //... se saca la ficha de la celda de donde la estamos moviendo
+          currentPlayer = saveCurrentPlayer;
           board[movingFrom!] = '';
           movingFrom = null;
           //... ponemos la ficha en la nueva celda...
@@ -96,6 +112,7 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
           //... indicamos que el tablero cambió
 
           boardChanged = true;
+          changeOponent = true;
         }
       }
     } else {
@@ -105,7 +122,6 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
         //... colocamos la ficha del jugador actual en la celda seleccionada
         board[pos] = currentPlayer;
         //... indicamos que el tablero cambió
-
         boardChanged = true;
       } else {
         //Si la celda esta ocupada, generamos un estado de error
@@ -135,5 +151,6 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
 
     //... emitimos este estado para que la vista lo refleje
     emit(TicTacToeFirstState(board: board, currentPlayer: currentPlayer));
+    print('termine el coso');
   }
 }

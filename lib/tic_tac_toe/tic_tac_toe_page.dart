@@ -1,4 +1,5 @@
 import 'package:ejemplos_2do_soft_9010/tic_tac_toe/tic_tac_toe.dart';
+import 'package:ejemplos_2do_soft_9010/tic_tac_toe/tic_tac_toe_domain.dart';
 import 'package:ejemplos_2do_soft_9010/tic_tac_toe/tic_tac_toe_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
@@ -76,21 +77,27 @@ class TicTacToePage extends StatelessWidget {
                         itemBuilder: (BuildContext context, int index) {
                           //Aca tomamos el valor de cada celda el tablero del estado
                           String cell = state.board[index];
-                          TicTacToeGame aTile = TicTacToeGame();
+
+                          TicTacToeGame aTile = context.read<TicTacToeGame>();
+                          print(
+                              'se selecciono una casilla?: ${aTile.selected}');
                           return Container(
                             decoration: BoxDecoration(
-                                color: aTile.selected
-                                    ? context.read<TicTacToeGame>().color
-                                    : Colors.transparent,
+                                color: aTile.selected && cell == '[X]' ||
+                                        cell == '[O]'
+                                    ? Color.fromARGB(255, 245, 240, 190)
+                                    : Colors.white,
                                 border: Border.all(color: Colors.black)),
                             child: SizedBox.expand(
                               child: ElevatedButton(
                                 child: Text(cell,
                                     style: TextStyle(
-                                        color: cell == 'O'
+                                        fontSize: 50,
+                                        color: cell == 'O' || cell == '[O]'
                                             ? Colors.red
                                             : Colors.blue)),
                                 onPressed: () {
+                                  print(aTile.selected);
                                   //Acá buscamos un cubit en los widgets superiores (parents)
                                   //el cual sera el tictactoeCubit  y ejecutamos el método
                                   //selectCell(), generando, de este modo, un evento al cubit
@@ -120,7 +127,8 @@ class TicTacToePage extends StatelessWidget {
                         Text(
                           state.currentPlayer,
                           style: TextStyle(
-                              color: state.currentPlayer == 'O'
+                              color: state.currentPlayer == 'O' ||
+                                      state.currentPlayer == 'continua O'
                                   ? Colors.red
                                   : Colors.blue,
                               fontSize: 50),
