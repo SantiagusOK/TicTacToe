@@ -16,12 +16,12 @@ class MenuPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            ElevatedButton(
+            /*ElevatedButton(
                 onPressed: () {
                   memoryGameCubit.initGame();
                   examples2ndRouter.goNamed(Pages.memoryGame.name);
                 },
-                child: const Text('Memoria')),
+                child: const Text('Memoria')),*/
             /*ElevatedButton(
                 onPressed: () {
                   examples2ndRouter.goNamed(Pages.ejLayoutBuilder.name);
@@ -32,7 +32,10 @@ class MenuPage extends StatelessWidget {
                   // memoryGameCubit.initGame();
                   examples2ndRouter.goNamed(Pages.tictactoe.name);
                 },
-                child: const Text('TaTeTi')),
+                child: const Text(
+                  'TaTeTi',
+                  style: TextStyle(fontSize: 50),
+                )),
           ],
         ),
       ),

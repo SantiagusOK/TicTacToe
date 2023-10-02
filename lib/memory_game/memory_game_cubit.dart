@@ -16,7 +16,6 @@ class MemoryGameCubit extends Cubit<MemoryGameState> {
     Colors.blue,
     Colors.green,
     Colors.brown,
-    Colors.grey
   ];
 
   /*final List<String> boardTiles = [

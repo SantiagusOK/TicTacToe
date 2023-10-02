@@ -16,7 +16,6 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
   bool selected = false;
   int saveMovingFrom = 0;
   String saveCurrentPlayer = '';
-  bool changeOponent = true;
 
   MaterialColor color = Colors.red;
   final List<MaterialColor> boardTiles = [
@@ -42,7 +41,7 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
     emit(TicTacToeFirstState(board: board, currentPlayer: currentPlayer));
   }
 
-  bool _moventPlayer(int positionPlayer, chosenBox) {
+  bool _moventPlayer(int positionPlayer, int chosenBox, List board) {
     List lista_tablero = [
       [3, 4, 1],
       [0, 3, 4, 5, 2],
@@ -55,6 +54,12 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
       [7, 4, 5]
     ];
     List lista = lista_tablero[positionPlayer];
+    if (board[chosenBox] == 'X' ||
+        board[chosenBox] == 'O' ||
+        board[chosenBox] == '[X]' ||
+        board[chosenBox] == '[O]') {
+      return false;
+    }
     if (lista.contains(chosenBox)) {
       return true;
     } else {
@@ -96,7 +101,6 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
   selectCell(int pos) {
     bool boardChanged = false;
     if (_allTheChipsHaveBeenPlaced()) {
-      changeOponent = false;
       //Si ya han sido colocadas las 6 fichas...
       selected = true;
       emit(TicTacToeFirstState(board: board, currentPlayer: currentPlayer));
@@ -114,14 +118,13 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
             errorMessage: 'Debes seleccionar una ficha propia'));
       } else {
         //Si la celda esta vacía...
-
         if (movingFrom == null) {
           //... pero no hay una ficha para mover seleccionada..
           //... generamos un estado de error
           emit(const TicTacToeFailureState(
               errorMessage:
                   'Primero debe seleccionar la ficha que desea mover'));
-        } else if (_moventPlayer(saveMovingFrom, pos)) {
+        } else if (_moventPlayer(saveMovingFrom, pos, board)) {
           //... y ya se había seleccionado la ficha a mover...
           //... se saca la ficha de la celda de donde la estamos moviendo
           currentPlayer = saveCurrentPlayer;
@@ -132,10 +135,9 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
           //... indicamos que el tablero cambió
 
           boardChanged = true;
-          changeOponent = true;
         } else {
           emit(const TicTacToeFailureState(
-              errorMessage: 'No se puede mover tu ficha a esa casilla'));
+              errorMessage: 'No se puede mover esta ficha a esta casilla'));
         }
       }
     } else {
