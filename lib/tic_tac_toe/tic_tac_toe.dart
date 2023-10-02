@@ -42,6 +42,26 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
     emit(TicTacToeFirstState(board: board, currentPlayer: currentPlayer));
   }
 
+  bool _moventPlayer(int positionPlayer, chosenBox) {
+    List lista_tablero = [
+      [3, 4, 1],
+      [0, 3, 4, 5, 2],
+      [1, 4, 5],
+      [0, 1, 4, 6, 7],
+      [0, 1, 2, 3, 5, 6, 7, 8],
+      [2, 1, 4, 7, 8],
+      [3, 4, 7],
+      [6, 3, 4, 5, 8],
+      [7, 4, 5]
+    ];
+    List lista = lista_tablero[positionPlayer];
+    if (lista.contains(chosenBox)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   bool _allTheChipsHaveBeenPlaced() {
     // Devuelve true si ya se colocaron las 6 fichas sobre el tablero
     // , es decir, si board tiene 6 celdas cuyo valor no sea un String vacio ('')
@@ -94,13 +114,14 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
             errorMessage: 'Debes seleccionar una ficha propia'));
       } else {
         //Si la celda esta vacía...
+
         if (movingFrom == null) {
           //... pero no hay una ficha para mover seleccionada..
           //... generamos un estado de error
           emit(const TicTacToeFailureState(
               errorMessage:
                   'Primero debe seleccionar la ficha que desea mover'));
-        } else {
+        } else if (_moventPlayer(saveMovingFrom, pos)) {
           //... y ya se había seleccionado la ficha a mover...
           //... se saca la ficha de la celda de donde la estamos moviendo
           currentPlayer = saveCurrentPlayer;
@@ -112,6 +133,9 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
 
           boardChanged = true;
           changeOponent = true;
+        } else {
+          emit(const TicTacToeFailureState(
+              errorMessage: 'No se puede mover tu ficha a esa casilla'));
         }
       }
     } else {
@@ -150,6 +174,5 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
 
     //... emitimos este estado para que la vista lo refleje
     emit(TicTacToeFirstState(board: board, currentPlayer: currentPlayer));
-    print('termine el coso');
   }
 }

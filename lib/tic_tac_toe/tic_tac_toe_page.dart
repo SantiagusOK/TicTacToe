@@ -78,8 +78,8 @@ class TicTacToePage extends StatelessWidget {
                           String cell = state.board[index];
 
                           TicTacToeGame aTile = context.read<TicTacToeGame>();
-                          print(
-                              'se selecciono una casilla?: ${aTile.selected}');
+                          /*print(
+                              'se selecciono una casilla?: ${aTile.selected}');*/
                           return Container(
                             decoration: BoxDecoration(
                                 color: aTile.selected && cell == '[X]' ||
@@ -96,7 +96,7 @@ class TicTacToePage extends StatelessWidget {
                                             ? Colors.red
                                             : Colors.blue)),
                                 onPressed: () {
-                                  print(aTile.selected);
+                                  //print(aTile.selected);
                                   //Acá buscamos un cubit en los widgets superiores (parents)
                                   //el cual sera el tictactoeCubit  y ejecutamos el método
                                   //selectCell(), generando, de este modo, un evento al cubit
@@ -120,7 +120,7 @@ class TicTacToePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text(
-                          'Turno de',
+                          'Turno de:',
                           style: TextStyle(color: Colors.black, fontSize: 50),
                         ),
                         Text(
