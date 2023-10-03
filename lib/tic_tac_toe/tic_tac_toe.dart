@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:ffi';
 import 'dart:math';
 import 'package:bloc/bloc.dart';
 import 'package:ejemplos_2do_soft_9010/tic_tac_toe/tic_tac_toe_state.dart';
@@ -27,6 +28,39 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
     emit(TicTacToeFirstState(board: board, currentPlayer: currentPlayer));
   }
 
+  bool _canmoveplayer(int positionPlayer, List board) {
+    List listaMove2 = [];
+    List listPosibleMoves2 = [
+      [1, 4, 3],
+      [1, 4, 5],
+      [3, 4, 7],
+      [7, 4, 5]
+    ];
+
+    switch (positionPlayer) {
+      case 0:
+        listaMove2 = listPosibleMoves2[0];
+      case 2:
+        listaMove2 = listPosibleMoves2[1];
+      case 6:
+        listaMove2 = listPosibleMoves2[2];
+      case 8:
+        listaMove2 = listPosibleMoves2[3];
+    }
+    int c = 0;
+    print(listaMove2.length);
+    for (int a = 0; a < listaMove2.length; a++) {
+      int valor = listaMove2[a];
+      if (board[valor] == 'X' || board[valor] == 'O') {
+        c++;
+        if (c == 3) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
   bool _moventPlayer(int positionPlayer, int chosenBox, List board) {
     List listPosibleMoves = [
       [3, 4, 1],
@@ -39,13 +73,14 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
       [6, 3, 4, 5, 8],
       [7, 4, 5]
     ];
-    List lista = listPosibleMoves[positionPlayer];
+
     if (board[chosenBox] == 'X' ||
         board[chosenBox] == 'O' ||
         board[chosenBox] == '[X]' ||
         board[chosenBox] == '[O]') {
       return false;
     }
+    List lista = listPosibleMoves[positionPlayer];
     if (lista.contains(chosenBox)) {
       return true;
     } else {
@@ -89,7 +124,10 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
     if (_allTheChipsHaveBeenPlaced()) {
       //Si ya han sido colocadas las 6 fichas...
       emit(TicTacToeFirstState(board: board, currentPlayer: currentPlayer));
-      if (board[pos] == currentPlayer) {
+      if (_canmoveplayer(pos, board) == false) {
+        emit(const TicTacToeFailureState(
+            errorMessage: 'Esta ficha no se puede mover'));
+      } else if (board[pos] == currentPlayer) {
         // Si el jugador ha seleccionado una celda donde hay una ficha suya
         // (la ficha a mover), se guarda en movingFrom la posición de esta celda
         movingFrom = pos;
