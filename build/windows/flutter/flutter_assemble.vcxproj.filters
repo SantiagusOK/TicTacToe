@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\santi\OneDrive\Documentos\programacion\TicTacToe\build\windows\CMakeFiles\0f0d0dcc40189f2ea01238f2e77db95e\flutter_windows.dll.rule">
+    <CustomBuild Include="C:\Users\Agustin\Documents\programacion\Flutter\TicTacToe\build\windows\CMakeFiles\7b8bb261d115f4592b8f73ecf9f8e11b\flutter_windows.dll.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\santi\OneDrive\Documentos\programacion\TicTacToe\build\windows\CMakeFiles\cbaca940fc4e03132ac60fe328dc0484\flutter_assemble.rule">
+    <CustomBuild Include="C:\Users\Agustin\Documents\programacion\Flutter\TicTacToe\build\windows\CMakeFiles\6855427f52a35cf5bc3fe3d18fe6458b\flutter_assemble.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\santi\OneDrive\Documentos\programacion\TicTacToe\windows\flutter\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\Agustin\Documents\programacion\Flutter\TicTacToe\windows\flutter\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\Users\santi\OneDrive\Documentos\programacion\TicTacToe\build\windows\flutter\CMakeFiles\flutter_assemble" />
+    <None Include="C:\Users\Agustin\Documents\programacion\Flutter\TicTacToe\build\windows\flutter\CMakeFiles\flutter_assemble" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{2D5CF97D-F9D0-3E41-BDDA-46123CCC06DD}</UniqueIdentifier>
+      <UniqueIdentifier>{88718A90-84ED-321F-BD34-2C2B47B31159}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

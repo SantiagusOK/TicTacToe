@@ -1,6 +1,6 @@
-^C:\USERS\SANTI\ONEDRIVE\DOCUMENTOS\PROGRAMACION\TICTACTOE\BUILD\WINDOWS\CMAKEFILES\0F0D0DCC40189F2EA01238F2E77DB95E\FLUTTER_WINDOWS.DLL.RULE
+^C:\USERS\AGUSTIN\DOCUMENTS\PROGRAMACION\FLUTTER\TICTACTOE\BUILD\WINDOWS\CMAKEFILES\7B8BB261D115F4592B8F73ECF9F8E11B\FLUTTER_WINDOWS.DLL.RULE
 setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=S:\flutter PROJECT_DIR=C:\Users\santi\OneDrive\Documentos\programacion\TicTacToe FLUTTER_ROOT=S:\flutter FLUTTER_EPHEMERAL_DIR=C:\Users\santi\OneDrive\Documentos\programacion\TicTacToe\windows\flutter\ephemeral PROJECT_DIR=C:\Users\santi\OneDrive\Documentos\programacion\TicTacToe FLUTTER_TARGET=C:\Users\santi\OneDrive\Documentos\programacion\TicTacToe\lib\main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC9hNzk0Y2YyNjgxYzZjOWZlN2IyNjBlMGU4NGRlOTYyOThkYzljMThiLw== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=C:\Users\santi\OneDrive\Documentos\programacion\TicTacToe\.dart_tool\package_config.json S:/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\src\flutter PROJECT_DIR=C:\Users\Agustin\Documents\programacion\Flutter\TicTacToe FLUTTER_ROOT=C:\src\flutter FLUTTER_EPHEMERAL_DIR=C:\Users\Agustin\Documents\programacion\Flutter\TicTacToe\windows\flutter\ephemeral PROJECT_DIR=C:\Users\Agustin\Documents\programacion\Flutter\TicTacToe FLUTTER_TARGET=C:\Users\Agustin\Documents\programacion\Flutter\TicTacToe\lib\main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC9iMjAxODNlMDQwOTYwOTRiY2MzN2Q5Y2RlMmE0Yjk2ZjVjYzY4NGNmLw== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=C:\Users\Agustin\Documents\programacion\Flutter\TicTacToe\.dart_tool\package_config.json C:/src/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -8,7 +8,7 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\USERS\SANTI\ONEDRIVE\DOCUMENTOS\PROGRAMACION\TICTACTOE\BUILD\WINDOWS\CMAKEFILES\CBACA940FC4E03132AC60FE328DC0484\FLUTTER_ASSEMBLE.RULE
+^C:\USERS\AGUSTIN\DOCUMENTS\PROGRAMACION\FLUTTER\TICTACTOE\BUILD\WINDOWS\CMAKEFILES\6855427F52A35CF5BC3FE3D18FE6458B\FLUTTER_ASSEMBLE.RULE
 setlocal
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -16,9 +16,9 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\USERS\SANTI\ONEDRIVE\DOCUMENTOS\PROGRAMACION\TICTACTOE\WINDOWS\FLUTTER\CMAKELISTS.TXT
+^C:\USERS\AGUSTIN\DOCUMENTS\PROGRAMACION\FLUTTER\TICTACTOE\WINDOWS\FLUTTER\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/santi/OneDrive/Documentos/programacion/TicTacToe/windows -BC:/Users/santi/OneDrive/Documentos/programacion/TicTacToe/build/windows --check-stamp-file C:/Users/santi/OneDrive/Documentos/programacion/TicTacToe/build/windows/flutter/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/Agustin/Documents/programacion/Flutter/TicTacToe/windows -BC:/Users/Agustin/Documents/programacion/Flutter/TicTacToe/build/windows --check-stamp-file C:/Users/Agustin/Documents/programacion/Flutter/TicTacToe/build/windows/flutter/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

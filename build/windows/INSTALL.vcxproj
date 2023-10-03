@@ -18,9 +18,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{978526FC-6C37-38A3-9117-D901EA1BE659}</ProjectGuid>
+    <ProjectGuid>{8C4BE736-7FCC-35B4-AE85-021AFB2F9200}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
     <ProjectName>INSTALL</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
@@ -100,7 +100,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\santi\OneDrive\Documentos\programacion\TicTacToe\build\windows\CMakeFiles\cdbd04ea2451942a5cf7934f46f2f817\INSTALL_force.rule">
+    <CustomBuild Include="C:\Users\Agustin\Documents\programacion\Flutter\TicTacToe\build\windows\CMakeFiles\18a1d490e7ceafa32c20a07c29fdf75a\INSTALL_force.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> </Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
 cd .
@@ -112,7 +112,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\santi\OneDrive\Documentos\programacion\TicTacToe\build\windows\CMakeFiles\INSTALL_force</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Agustin\Documents\programacion\Flutter\TicTacToe\build\windows\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
       <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'"> </Message>
@@ -126,7 +126,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">C:\Users\santi\OneDrive\Documentos\programacion\TicTacToe\build\windows\CMakeFiles\INSTALL_force</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">C:\Users\Agustin\Documents\programacion\Flutter\TicTacToe\build\windows\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</VerifyInputsAndOutputsExist>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> </Message>
@@ -140,20 +140,20 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\santi\OneDrive\Documentos\programacion\TicTacToe\build\windows\CMakeFiles\INSTALL_force</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Agustin\Documents\programacion\Flutter\TicTacToe\build\windows\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</VerifyInputsAndOutputsExist>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\santi\OneDrive\Documentos\programacion\TicTacToe\build\windows\ZERO_CHECK.vcxproj">
-      <Project>{F81590D2-8C0A-30B3-A6B4-E8D5DD83FDE0}</Project>
+    <ProjectReference Include="C:\Users\Agustin\Documents\programacion\Flutter\TicTacToe\build\windows\ZERO_CHECK.vcxproj">
+      <Project>{0699FC65-79B1-36B1-ABF7-9F9DD6BADA75}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\santi\OneDrive\Documentos\programacion\TicTacToe\build\windows\ALL_BUILD.vcxproj">
-      <Project>{C1206BFD-4D57-3AD9-B6DB-6878936B4FC6}</Project>
+    <ProjectReference Include="C:\Users\Agustin\Documents\programacion\Flutter\TicTacToe\build\windows\ALL_BUILD.vcxproj">
+      <Project>{82114B63-5CCC-339A-87EC-DB6B77A9E9A9}</Project>
       <Name>ALL_BUILD</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

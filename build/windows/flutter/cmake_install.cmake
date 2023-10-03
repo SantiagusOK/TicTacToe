@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/santi/OneDrive/Documentos/programacion/TicTacToe/windows/flutter
+# Install script for directory: C:/Users/Agustin/Documents/programacion/Flutter/TicTacToe/windows/flutter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
