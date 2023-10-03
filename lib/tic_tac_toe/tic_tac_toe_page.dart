@@ -76,14 +76,11 @@ class TicTacToePage extends StatelessWidget {
                         itemBuilder: (BuildContext context, int index) {
                           //Aca tomamos el valor de cada celda el tablero del estado
                           String cell = state.board[index];
-
-                          TicTacToeGame aTile = context.read<TicTacToeGame>();
                           /*print(
                               'se selecciono una casilla?: ${aTile.selected}');*/
                           return Container(
                             decoration: BoxDecoration(
-                                color: aTile.selected && cell == '[X]' ||
-                                        cell == '[O]'
+                                color: cell == '[X]' || cell == '[O]'
                                     ? Color.fromARGB(255, 245, 240, 190)
                                     : Colors.white,
                                 border: Border.all(color: Colors.black)),

@@ -1,9 +1,7 @@
 import 'dart:async';
-import 'dart:ffi';
 import 'dart:math';
 import 'package:bloc/bloc.dart';
 import 'package:ejemplos_2do_soft_9010/tic_tac_toe/tic_tac_toe_state.dart';
-import 'package:flutter/material.dart';
 
 // Definimos la clase TicTacToeGame como una subclase de Cubit
 // esta parametrizado con TicTacToeState, el cual es la superclase
@@ -13,20 +11,8 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
   late String currentPlayer;
   late List<String> board;
   int? movingFrom;
-  bool selected = false;
   int saveMovingFrom = 0;
   String saveCurrentPlayer = '';
-
-  MaterialColor color = Colors.red;
-  final List<MaterialColor> boardTiles = [
-    Colors.purple,
-    Colors.orange,
-    Colors.yellow,
-    Colors.red,
-    Colors.blue,
-    Colors.green,
-    Colors.brown,
-  ];
   TicTacToeGame()
       : super(const TicTacToeFirstState(
             board: ['', '', '', '', '', '', '', '', ''], currentPlayer: 'X')) {
@@ -42,7 +28,7 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
   }
 
   bool _moventPlayer(int positionPlayer, int chosenBox, List board) {
-    List lista_tablero = [
+    List listPosibleMoves = [
       [3, 4, 1],
       [0, 3, 4, 5, 2],
       [1, 4, 5],
@@ -53,7 +39,7 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
       [6, 3, 4, 5, 8],
       [7, 4, 5]
     ];
-    List lista = lista_tablero[positionPlayer];
+    List lista = listPosibleMoves[positionPlayer];
     if (board[chosenBox] == 'X' ||
         board[chosenBox] == 'O' ||
         board[chosenBox] == '[X]' ||
@@ -102,7 +88,6 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
     bool boardChanged = false;
     if (_allTheChipsHaveBeenPlaced()) {
       //Si ya han sido colocadas las 6 fichas...
-      selected = true;
       emit(TicTacToeFirstState(board: board, currentPlayer: currentPlayer));
       if (board[pos] == currentPlayer) {
         // Si el jugador ha seleccionado una celda donde hay una ficha suya
@@ -137,7 +122,7 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
           boardChanged = true;
         } else {
           emit(const TicTacToeFailureState(
-              errorMessage: 'No se puede mover esta ficha a esta casilla'));
+              errorMessage: 'No se puede mover la ficha a esta casilla'));
         }
       }
     } else {

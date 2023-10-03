@@ -21,8 +21,8 @@ class MenuPage extends StatelessWidget {
                   memoryGameCubit.initGame();
                   examples2ndRouter.goNamed(Pages.memoryGame.name);
                 },
-                child: const Text('Memoria')),*/
-            /*ElevatedButton(
+                child: const Text('Memoria')),
+            ElevatedButton(
                 onPressed: () {
                   examples2ndRouter.goNamed(Pages.ejLayoutBuilder.name);
                 },
