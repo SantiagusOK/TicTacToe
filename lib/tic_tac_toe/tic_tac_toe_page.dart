@@ -81,7 +81,7 @@ class TicTacToePage extends StatelessWidget {
                           return Container(
                             decoration: BoxDecoration(
                                 color: cell == '[X]' || cell == '[O]'
-                                    ? Color.fromARGB(255, 245, 240, 190)
+                                    ? const Color.fromARGB(255, 245, 240, 190)
                                     : Colors.white,
                                 border: Border.all(color: Colors.black)),
                             child: SizedBox.expand(

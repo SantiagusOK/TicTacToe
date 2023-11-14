@@ -48,8 +48,6 @@ class MemoryGamePage extends StatelessWidget {
                     itemBuilder: (BuildContext context, int index) {
                       MemoryGameTile aTile =
                           context.read<MemoryGameCubit>().board[index];
-                      print(
-                          "$index -- ${aTile.isUncovered} // ${aTile.tileIndex}");
                       return Container(
                           decoration: BoxDecoration(
                               color: aTile.isUncovered

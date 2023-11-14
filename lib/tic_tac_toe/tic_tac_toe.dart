@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:ffi';
 import 'dart:math';
 import 'package:bloc/bloc.dart';
 import 'package:ejemplos_2do_soft_9010/tic_tac_toe/tic_tac_toe_state.dart';
@@ -48,7 +47,6 @@ class TicTacToeGame extends Cubit<TicTacToeState> {
         listaMove2 = listPosibleMoves2[3];
     }
     int c = 0;
-    print(listaMove2.length);
     for (int a = 0; a < listaMove2.length; a++) {
       int valor = listaMove2[a];
       if (board[valor] == 'X' || board[valor] == 'O') {
